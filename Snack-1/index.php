@@ -48,15 +48,48 @@ $basket_match = [
 
 ?>
 
-<h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snack 1</title>
+</head>
+<body>
+
+<div class="matches">
     <?php
 
-for ($i = 0; $i < count($basket_match); $i++) {
+    for ($i = 0; $i < count($basket_match); $i++) {
     $single_match= $basket_match[$i];
-    echo('<pre>');
     echo('<h3>' . $single_match['home'] . ' - ' . $single_match['away'] . ' | ' . $single_match['home_pt'] . ' - ' . $single_match['away_pt'] . '</h3>');
-    echo('</pre>');
+    }
 
-}
     ?>
-</h2>
+</div>
+
+
+<style>
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    .matches {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height:100vh;
+    }
+
+    h3 {
+        margin-top:20px;
+        color: red;
+    }
+</style>
+</body>
+</html>
+

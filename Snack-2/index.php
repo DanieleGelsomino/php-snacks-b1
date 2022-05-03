@@ -22,16 +22,40 @@ $age = $_GET['age']
     <title>Snack 2</title>
 </head>
 <body>
-    <div>
+    <div class="access">
         <h2>
             <?php
-            if(strlen($name) <= 3 && (!strpos($mail, '.') && !strpos($mail, '@')) && !is_numeric($age)) {
-            echo ('Acccesso negato');
+
+            if(strlen($name) <= 3 || (!strpos($mail, '.') && !strpos($mail, '@')) || !is_numeric($age)) {
+            echo ('Accesso negato');
             } else  {
             echo ('Accesso eseguito');
             }
+
             ?>
         </h2>
     </div>
+
+    <style>
+
+    *{
+        margin: 0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    .access {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height:100vh;
+    }
+
+    h2 {
+        color: blue;
+        font-size: 2.5rem;
+    }
+    </style>
 </body>
 </html>
