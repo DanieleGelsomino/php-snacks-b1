@@ -26,7 +26,7 @@ $age = $_GET['age']
         <h2>
             <?php
 
-            if(strlen($name) <= 3 || (!strpos($mail, '.') && !strpos($mail, '@')) || !is_numeric($age)) {
+            if(!strlen($name) > 3 || !filter_var($mail, FILTER_VALIDATE_EMAIL) || !is_numeric($age)) {
             echo ('Accesso negato');
             } else  {
             echo ('Accesso eseguito');
